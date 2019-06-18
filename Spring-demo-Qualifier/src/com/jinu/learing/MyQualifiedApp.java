@@ -6,9 +6,11 @@ public class MyQualifiedApp {
 
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
-		Coach thecoah=context.getBean("trackCoach",Coach.class);
+		TrackCoach thecoah=context.getBean("trackCoach",TrackCoach.class);
 		System.out.println(thecoah.getDailyworkout());
 		System.out.println(thecoah.getDailyfortunes());
+		System.out.println(thecoah.getEmail());
+		System.out.println(thecoah.getLocation());
 		context.close();
 	}
 
