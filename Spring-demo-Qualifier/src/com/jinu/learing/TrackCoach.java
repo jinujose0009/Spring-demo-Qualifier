@@ -1,4 +1,7 @@
 package com.jinu.learing;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,9 +32,6 @@ public class TrackCoach implements Coach {
 	public TrackCoach() {
 		System.out.println("Default constructor");
 	}
-	
-	
-
 
 	@Override
 	public String getDailyworkout() {
@@ -43,6 +43,14 @@ public class TrackCoach implements Coach {
 	public String getDailyfortunes() {
 		// TODO Auto-generated method stub
 		return "Daily spend for 30 min for run";
+	}
+	@PostConstruct
+	public void intMethode(){
+		System.out.println("Inside inti methode");
+	}
+	@PreDestroy
+	public void destroyMethode(){
+		System.out.println("Inside Destroyed Methode");
 	}
 
 }
